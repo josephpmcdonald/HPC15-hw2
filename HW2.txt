@@ -9,6 +9,11 @@ with each increase in processors. The only lackluster improvement is
 going between 16 to 64 processes where we don't see as much an
 improvement in time given the fourfold increase in processors.
 
+NOTE: ssort should be called with the total number of random numbers
+that are to be sorted as an argument. It divides this argument by
+the number of processes and which is how many each process will
+generate and sort.
+
 ssort stores its sorted numbers in text files, one for each processor,
 named 'rank*.txt'.
 

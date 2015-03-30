@@ -7,6 +7,13 @@
  * Hint: If possible, try to run the program on two different machines,
  * which are connected through a network. You should see uneven timings;
  * try to understand/explain them.
+ *
+ *
+ * COMMENT: I can see uneven timing but there doesn't seem to be any bug that
+ * causes this to crash. If instead of a random number, result just adds 1,
+ * it runs quickly without staggering though there is still a much larger timing
+ * every 5th or 6th count.
+ *
  ******************************************************************************/
 #include "mpi.h"
 #include <stdio.h>
