@@ -36,7 +36,7 @@ int main( int argc, char *argv[])
     /* Number of random numbers per processor (this should be increased
      * for actual tests or could be passed in through the command line */
     N = 100;
-    if (argc > 1)
+    if (argc > 1) {
         int numbers = atoi(argv[1]);
         if (numbers % P != 0){
             printf("Number of rands must be divisible by processes.\n");
@@ -44,7 +44,9 @@ int main( int argc, char *argv[])
         }
         else
             N = numbers/P;
-    printf("%d processors with %d numbers each.\n", P, N);
+    }
+    if (rank == 0)
+        printf("%d processors with %d numbers each.\n", P, N);
 
     MPI_Barrier(MPI_COMM_WORLD);
     get_timestamp(&time0);

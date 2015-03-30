@@ -1,0 +1,48 @@
+1. I've listed the bugs and made corrections for each mpi_bug*.c code
+in the comments at the beginning of each file and described how I
+fixed them there as well.
+
+2. When running my samplesort, ssort.c, on Stampede, I made four different
+runs, using two processors, then eight, then 16 and finally 64. The
+timings are listed below, where a speedup in performance is noticeable
+with each increase in processors. The only lackluster improvement is
+going between 16 to 64 processes where we don't see as much an
+improvement in time given the fourfold increase in processors.
+
+ssort stores its sorted numbers in text files, one for each processor,
+named 'rank*.txt'.
+
+
+2 processors with 50000000 numbers each.
+Sorted 100000000 numbers on 2 processors, 12.562390 seconds
+ 
+8 processors with 12500000 numbers each.
+Sorted 100000000 numbers on 8 processors, 3.672322 seconds
+ 
+16 processors with 6250000 numbers each.
+Sorted 100000000 numbers on 16 processors, 1.831058 seconds
+ 
+64 processors with 1562500 numbers each.
+Sorted 100000000 numbers on 64 processors, 1.111546 seconds
+ 
+
+3. For my project, I would like to create a parallel version of the 
+machine learning algorithm AdaBoost. AdaBoost is a learning technique
+for classification (labeling data points as +1 or -1) that takes a
+family of weak classifiers, which are defined as having marginally
+better accuracy than 50%, and combines them together to build a much
+more accurate classifier that doesn't suffer overfitting.
+The algorithm works through a iterative process of selecting the best
+performing classifier per step, then reweighting the training sample
+to place more emphasis on incorrectly labeled points, and then
+combining the classifier with that from previous steps. This process
+however is sequential and is also very time costly. There are
+publications that describe parallelizing AdaBoost to improve
+computation time and still maintain comparable accuracy. I would like
+to implement one of these versions to see how good of a performance
+improvement can be obtained in terms of time and if there is a
+significant reduction in accuracy of the generated classifier.
+
+
+
+
