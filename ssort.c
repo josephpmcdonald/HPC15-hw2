@@ -37,7 +37,8 @@ int main( int argc, char *argv[])
      * for actual tests or could be passed in through the command line */
     N = 100;
     if (argc > 1)
-        N = atoi(argv[1]);
+        int N = atoi(argv[1])/P;
+    printf("%d processors with %d numbers each.\n", P, N);
 
     MPI_Barrier(MPI_COMM_WORLD);
     get_timestamp(&time0);
